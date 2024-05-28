@@ -1,6 +1,7 @@
 {
 	"name": "portfolio",
 	"version": "1.0.0",
+	"homepage": "https://wiwok.github.io",
 	"dependencies": {
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
