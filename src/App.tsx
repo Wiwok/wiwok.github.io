@@ -72,12 +72,12 @@ function App() {
 					<ExBox
 						name="Secretary of Génération Précarité"
 						date="2024 — now"
-						description="Secretary of an association fighting against student precarity."
+						description="Secretary of an association fighting against student precarity. I invest my time in the fight against student poverty and manage numerous partnerships to help as many students as possible."
 					/>
 					<ExBox
-						name="Elected to the CFVU of the University of Grenoble Alpes"
+						name="Elected to the Central Bodies of the University of Grenoble Alpes"
 						date="2024 — Now"
-						description="The Commission for Education and University Life (Commission Formation et Vie Universitaire) oversees the progress of studies and student life on the campuses of UGA."
+						description="Elected to numerous councils that govern and decide the policies of UGA. I actively manage the university across many sectors and participate in decision-making processes."
 					/>
 				</div>
 				<div className="WhoAmI">
