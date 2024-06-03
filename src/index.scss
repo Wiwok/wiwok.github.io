@@ -61,9 +61,9 @@ a {
 	padding: 1vmax 1vmax;
 	border-radius: 0.9vmin;
 	display: flex;
+	flex-direction: column;
 	max-width: 30vw;
 	gap: 2vw;
-	flex-wrap: wrap;
 
 	pre {
 		margin: 0;
