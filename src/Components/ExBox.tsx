@@ -13,9 +13,9 @@ function ExBox({
 	description: string;
 	categories?: Array<string>;
 }) {
-	if (link) {
+	function Box() {
 		return (
-			<a target="_blank" rel="noreferrer" href={link} className="ExBox">
+			<>
 				<pre>{date}</pre>
 				<div>
 					<div>
@@ -31,26 +31,20 @@ function ExBox({
 						))}
 					</article>
 				</div>
+			</>
+		);
+	}
+
+	if (link) {
+		return (
+			<a target="_blank" rel="noreferrer" href={link} className="ExBox">
+				<Box />
 			</a>
 		);
 	} else {
 		return (
 			<div className="ExBox">
-				<pre>{date}</pre>
-				<div>
-					<div>
-						<h3>{name}</h3>
-						{roles?.map(el => (
-							<h5>{el}</h5>
-						))}
-					</div>
-					<section>{description}</section>
-					<article>
-						{categories?.map(el => (
-							<div>{el}</div>
-						))}
-					</article>
-				</div>
+				<Box />
 			</div>
 		);
 	}

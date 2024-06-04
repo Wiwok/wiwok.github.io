@@ -30,7 +30,7 @@ function App() {
 						with an extensive array of technologies. From pioneering web tools like ThreeJS and React, to
 						harnessing the power of the Unity game engine, and crafting desktop applications using
 						ElectronJS, I've delved into diverse realms. Moreover, my adeptness in programming languages,
-						spanning from C, C++, Rust, SQL, Java, HTML, CSS, JS, Batch, Python, and beyond, highlights my
+						spanning from Batch, HTML, CSS, JS, Python, Java, SQL, C, C++, Rust and beyond, highlights my
 						adaptability in the technical sphere. This breadth of expertise empowers me to creatively tackle
 						the myriad challenges inherent in my projects.
 					</p>

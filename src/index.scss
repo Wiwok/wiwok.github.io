@@ -63,7 +63,7 @@ a {
 	display: flex;
 	flex-direction: column;
 	max-width: 30vw;
-	gap: 2vw;
+	gap: 1vh;
 
 	pre {
 		margin: 0;
@@ -211,13 +211,13 @@ a {
 		&::before {
 			content: '';
 			position: absolute;
-			top: 0.75vmax;
-			left: 0.95vmax;
+			top: 0.77vmax;
+			left: 0.9vmax;
 			width: 1vmax;
 			height: 1vmax;
-			border-left: 0.15vmax solid #000;
+			border-right: 0.15vmax solid #000;
 			border-bottom: 0.15vmax solid #000;
-			transform: rotate(-45deg);
+			transform: rotate(45deg);
 		}
 	}
 }
@@ -241,7 +241,7 @@ a {
 		radial-gradient(circle at 70% 80%, rgba(96, 165, 250, 0.4), transparent 10%, transparent);
 
 	background-position: center;
-	animation: smoothMainBg 5s linear infinite;
+	animation: smoothMainBg 5s ease-in-out infinite;
 }
 
 .MainBox2 {
@@ -249,8 +249,6 @@ a {
 	background: radial-gradient(circle at 30% 20%, rgba(232, 121, 249, 0.4), transparent 10%, transparent),
 		radial-gradient(circle at 70% 60%, rgba(96, 165, 250, 0.4), transparent 10%, transparent),
 		radial-gradient(circle at 40% 80%, rgba(94, 234, 212, 0.4), transparent 10%, transparent);
-	background-position: center;
-	animation: smoothMainBg 5s linear infinite;
 }
 
 .WhoAmI {
