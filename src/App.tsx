@@ -90,6 +90,17 @@ function App() {
 					</p>
 				</div>
 			</div>
+			<div className="Footer">
+				<div>
+					<span>Emile Dechenaud — 2024</span>
+					<span>emile.dechenaud@gmail.com</span>
+				</div>
+				<div>
+					<a target="_blank" rel="noreferrer" href="https://github.com/Wiwok/wiwok.github.io">
+						Code source
+					</a>
+				</div>
+			</div>
 		</div>
 	);
 }

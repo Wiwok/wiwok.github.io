@@ -267,3 +267,25 @@ a {
 		color: #94a3b8;
 	}
 }
+
+.Footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 10vh;
+	width: 80%;
+	padding: 0 10%;
+	background-color: transparent;
+	backdrop-filter: blur(100px);
+	background: radial-gradient(circle at 40% 60%, rgba(232, 121, 249, 0.4), transparent 5%, transparent),
+		radial-gradient(circle at 80% 40%, rgba(94, 234, 212, 0.4), transparent 3%, transparent);
+	background-position: center;
+	color: #64748b;
+	& > div {
+		display: flex;
+		flex-direction: column;
+		& > a {
+			text-decoration: underline;
+		}
+	}
+}
