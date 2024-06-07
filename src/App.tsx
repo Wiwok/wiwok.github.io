@@ -97,7 +97,7 @@ function App() {
 				</div>
 				<div>
 					<a target="_blank" rel="noreferrer" href="https://github.com/Wiwok/wiwok.github.io">
-						Code source
+						Source code
 					</a>
 				</div>
 			</div>
