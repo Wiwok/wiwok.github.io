@@ -70,9 +70,9 @@ function App() {
 						description="Elected to numerous councils that govern and decide the policies of UGA. I actively manage the university across many sectors and participate in decision-making processes."
 					/>
 					<ExBox
-						name="Secretary of Génération Précarité"
+						name="President of Génération Précarité"
 						date="2024 — Now"
-						description="Secretary of an association fighting against student precarity. I invest my time in the fight against student poverty and manage numerous partnerships to help as many students as possible."
+						description="President of an association fighting against student precarity. I invest my time in the fight against student poverty and manage numerous partnerships to help as many students as possible."
 					/>
 					<ExBox
 						name="Student representative at Vaucanson High School"
