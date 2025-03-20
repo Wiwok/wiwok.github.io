@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/index.css" />
+	<script src="/static/js/search.js" defer />
+	<title>Search - EONET Interface</title>
+</head>
+
+<body>
+
+	<div class="NavBar">
+		<img src="/static/images/logo.svg" alt="NASA Logo">
+		<a href="/">Home</a>
+		<a href="/search.html">Search</a>
+		<a href="/tagged.html">Tagged</a>
+	</div>
+
+	<h1>Search</h1>
+
+	<div class="eventFilter">
+		<div class="Categories" id="searchCategories"></div>
+
+		<div class="searchOption">
+			<label for="categorySelect">Add a category</label>
+			<select id="categorySelect">
+				<option value="null"></option>
+			</select>
+		</div>
+
+		<div class="searchOption">
+			<label for="startDate">Start</label>
+			<input type="date" id="startDate">
+		</div>
+
+		<div class="searchOption">
+			<label for="endDate">End</label>
+			<input type="date" id="endDate">
+		</div>
+
+		<div class="searchOption">
+			<label for="status">Status</label>
+			<select id="status">
+				<option value="all">All</option>
+				<option value="open">In progress</option>
+				<option value="closed">Ended</option>
+			</select>
+		</div>
+
+		<button id="search">Search</button>
+	</div>
+
+	<div class="Events"></div>
+
+</body>
+
+</html>
