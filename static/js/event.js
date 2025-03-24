@@ -1,15 +1,8 @@
-const URL_BASE = 'https://eonet.gsfc.nasa.gov/api/v3/';
+import { fetchEvent } from './model/onlineInteractions.js';
+import { genEventPage } from './view/event.js';
 
 function getId() {
 	return new URLSearchParams(window.location.search).get('id');
-}
-
-async function fetchEvent(id) {
-	const MyEvent = await import('./model/event.js')
-		.then(result => result.default)
-		.catch(console.error);
-
-	return await MyEvent.create(await (await fetch(URL_BASE + 'events/' + id)).json());
 }
 
 function error() {
@@ -23,10 +16,7 @@ async function main() {
 	const event = await fetchEvent(id);
 	if (!event) return error();
 
-	document.getElementById('MainTitle').innerText = 'Event details';
-	document.getElementById('Event').appendChild(event.getPage());
-	event.genMap();
-	document.getElementById('tag').addEventListener('click', () => event.toggleTag());
+	genEventPage(event);
 }
 
 main();
