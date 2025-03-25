@@ -51,7 +51,13 @@ function genEventPage(event) {
 
 	document.getElementById('Event').appendChild(container);
 	genMap(event);
-	document.getElementById('tag').addEventListener('click', () => event.toggleTag());
+	document.getElementById('tag').addEventListener('click', () => {
+		document.getElementById('tag').innerText = event.toggleTag() ? 'Untag' : 'Tag';
+	});
+}
+
+function genError() {
+	document.getElementById('MainTitle').innerText = 'An error occurred';
 }
 
 function renderEvents(events) {
@@ -66,4 +72,4 @@ function renderEvents(events) {
 	events.forEach(event => container.appendChild(genEventCard(event)));
 }
 
-export { genEventCard, genEventPage, renderEvents };
+export { genError, genEventCard, genEventPage, renderEvents };

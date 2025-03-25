@@ -21,8 +21,8 @@ function getSelect() {
 	return document.getElementById('categorySelect');
 }
 
-function getSearchTitle() {
-	return document.getElementsByClassName('Events').item(0);
+function setSearchTitle(title) {
+	document.getElementsByClassName('Events').item(0).innerHTML = title;
 }
 
 function getStartDate() {
@@ -61,6 +61,7 @@ function loadCategories() {
 	});
 
 	select.addEventListener('change', addCategory);
+	document.getElementById('search').addEventListener('click', search);
 }
 
 function addCategory() {
@@ -104,7 +105,7 @@ export {
 	addCategory,
 	getEndDate,
 	getOption,
-	getSearchTitle,
+	setSearchTitle,
 	getSelect,
 	getSelectedCategories,
 	getStartDate,

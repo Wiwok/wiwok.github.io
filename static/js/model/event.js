@@ -44,29 +44,20 @@ class Event {
 		});
 	}
 
-	setTag(isTag) {
-		if (isTag) {
-			this.isTag = true;
-			document.getElementById('tag').innerText = 'Untag';
-		} else {
-			this.isTag = false;
-			document.getElementById('tag').innerText = 'Tag';
-		}
-	}
-
 	toggleTag() {
 		if (this.isTag) this.untag();
 		else this.tag();
+		return this.isTag;
 	}
 
 	tag() {
 		addTag(this.id);
-		this.setTag(true);
+		this.isTag = true;
 	}
 
 	untag() {
 		removeTag(this.id);
-		this.setTag(false);
+		this.isTag = false;
 	}
 }
 

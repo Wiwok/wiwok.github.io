@@ -4,11 +4,11 @@ import {
 	addCategory,
 	getEndDate,
 	getOption,
-	getSearchTitle,
 	getSelectedCategories,
 	getStartDate,
 	getStatus,
-	loadCategories
+	loadCategories,
+	setSearchTitle
 } from './view/search.js';
 
 function loadParameters() {
@@ -20,18 +20,15 @@ function loadParameters() {
 	if (option) {
 		option.selected = true;
 		addCategory();
+		search();
 	}
-
-	search();
 }
 
 function search() {
-	getSearchTitle().innerHTML = 'Searching...';
+	setSearchTitle('Searching...');
 
 	searchEvents(getSelectedCategories(), getStartDate(), getEndDate(), getStatus()).then(renderEvents);
 }
-
-document.getElementById('search').addEventListener('click', search);
 
 loadCategories();
 
