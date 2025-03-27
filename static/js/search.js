@@ -20,8 +20,9 @@ function loadParameters() {
 	if (option) {
 		option.selected = true;
 		addCategory();
-		search();
+		return true;
 	}
+	return false;
 }
 
 function search() {
@@ -30,6 +31,8 @@ function search() {
 	searchEvents(getSelectedCategories(), getStartDate(), getEndDate(), getStatus()).then(renderEvents);
 }
 
-loadCategories();
+loadCategories(search);
 
-loadParameters();
+if (loadParameters()) {
+	search();
+}

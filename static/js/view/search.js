@@ -49,7 +49,7 @@ function getSelectedCategories() {
 	return categoriesConcat.join(',');
 }
 
-function loadCategories() {
+function loadCategories(search) {
 	const select = getSelect();
 	CATEGORIES.forEach(val => {
 		const element = document.createElement('option');
