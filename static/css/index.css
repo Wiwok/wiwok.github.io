@@ -47,6 +47,12 @@ body {
 	--color-dust-light: #ceb58a;
 }
 
+input {
+	border-radius: 10px;
+	outline: none;
+	border: none;
+}
+
 a {
 	color: inherit;
 	text-decoration: inherit;
