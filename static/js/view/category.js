@@ -7,9 +7,9 @@ function genCategoryRemovableHTML(category, onRemove) {
 	title.innerText = category.title;
 	container.appendChild(title);
 
-	const cross = document.createElement('div');
+	const cross = document.createElement('button');
 	cross.addEventListener('click', () => onRemove(category.id));
-	cross.innerText = 'X';
+	cross.innerHTML = 'X';
 	cross.className = 'removeCategory';
 
 	container.appendChild(cross);

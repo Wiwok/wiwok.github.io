@@ -322,16 +322,19 @@ a.tempExtremes:hover {
 	margin-bottom: 2vh;
 }
 
-
 .removeCategory {
-	cursor: pointer;
 	padding: 5px;
+	background: none;
+	color: inherit;
+	font-weight: bold;
+	border: none;
 	border-radius: 0 100px 100px 0;
 	transition-duration: 150ms;
 }
 
 .removeCategory:hover {
 	background-color: rgba(0, 0, 0, 0.4);
+	border: none;
 }
 
 .searchOption {
