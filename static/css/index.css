@@ -216,6 +216,7 @@ a.tempExtremes:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 2vh;
+	margin-bottom: 5vh;
 }
 
 .Event {
