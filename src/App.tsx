@@ -67,7 +67,7 @@ function App() {
 					<ExBox
 						name="Elected to the Central Bodies of the University of Grenoble Alpes"
 						date="2024 — Now"
-						description="Elected to numerous councils that govern and decide the policies of UGA. I actively manage the university across many sectors and participate in decision-making processes."
+						description="Elected to numerous councils that govern and decide the policies of UGA. I am actively involved in university life in many sectors and participate in decision-making processes."
 					/>
 					<ExBox
 						name="President of Génération Précarité"
@@ -92,7 +92,7 @@ function App() {
 			</div>
 			<div className="Footer">
 				<div>
-					<span>Émile DECHENAUD — 2024</span>
+					<span>Émile DECHENAUD — 2025</span>
 					<span>emile.dechenaud@gmail.com</span>
 				</div>
 				<div>
