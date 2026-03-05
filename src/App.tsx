@@ -39,7 +39,7 @@ function App() {
 					<ExBox
 						name="The Pirate Phone"
 						link="https://github.com/ThePiratePhone"
-						date="2024 — Now"
+						date="2024 — 2025"
 						description="The Pirate Phone is by far my most comprehensive project. It's a software developed at the request of an organization to manage the recall of numerous phone numbers. It's a WebApp built in React along with a data server utilizing ExpressJS and MongoDB. Given the critical importance of data privacy and integrity, numerous security measures have been implemented. The software can be summarized as a phone number distributor, allowing multiple employees to simultaneously call multiple phone numbers without ever dialing the same number twice."
 						roles={['Lead Developer', 'Lead Designer', 'Engineer']}
 						categories={['TypeScript', 'React', 'MongoDB']}
@@ -66,12 +66,12 @@ function App() {
 				<div className="Experiences">
 					<ExBox
 						name="Elected to the Central Bodies of the University of Grenoble Alpes"
-						date="2024 — Now"
+						date="2024 — 2026"
 						description="Elected to numerous councils that govern and decide the policies of UGA. I am actively involved in university life in many sectors and participate in decision-making processes."
 					/>
 					<ExBox
 						name="President of Génération Précarité"
-						date="2024 — Now"
+						date="2024 — 2026"
 						description="President of an association fighting against student precarity. I invest my time in the fight against student poverty and manage numerous partnerships to help as many students as possible."
 					/>
 					<ExBox
@@ -85,14 +85,13 @@ function App() {
 					<p>
 						For numerous years, I have actively engaged in the realm of associations. I dedicate my time and
 						efforts to volunteering for various organizations and committees, driven by a commitment to
-						champion causes and propel personal initiatives forward. Oh. And by the way, I'm a music fan and
-						I play the piano.
+						champion causes and propel personal initiatives forward.
 					</p>
 				</div>
 			</div>
 			<div className="Footer">
 				<div>
-					<span>Émile DECHENAUD — 2025</span>
+					<span>Émile DECHENAUD — 2026</span>
 					<span>emile.dechenaud@gmail.com</span>
 				</div>
 				<div>
