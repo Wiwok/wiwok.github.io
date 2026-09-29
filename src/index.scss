@@ -2,49 +2,31 @@
 
 :root {
 	font-family: 'Inter', sans-serif;
+	--maincolor: #ffffff;
 
-	--maincolor: white;
+	--text: #475569;
+	--text-light: #94a3b8;
+	--blue: #60a5fa;
+	--cyan: #5eead4;
+	--pink: #e879f9;
+
+	color: var(--text);
+	background: var(--maincolor);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
 }
 
-@keyframes down {
-	0% {
-		transform: translate(0);
-	}
-	20% {
-		transform: translateY(15px);
-	}
-	40% {
-		transform: translate(0);
-	}
+* {
+	box-sizing: border-box;
 }
 
-@keyframes smoothTitleBg {
-	from {
-		background-position: 50% 50%, 50% 50%;
-	}
-	to {
-		background-position: 350% 50%, 350% 50%;
-	}
-}
-
-@keyframes smoothMainBg {
-	0% {
-		background-size: 100%;
-	}
-	50% {
-		background-size: 150%;
-	}
-	100% {
-		background-size: 100%;
-	}
+html {
+	scroll-behavior: smooth;
 }
 
 body {
 	margin: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	place-items: flex-start center;
 	width: 100%;
 	min-height: 100vh;
 	background: var(--maincolor);
@@ -56,78 +38,50 @@ a {
 	color: inherit;
 }
 
-.ExBox {
-	color: #64748b;
-	padding: 1vmax 1vmax;
-	border-radius: 0.9vmin;
-	display: flex;
-	flex-direction: column;
-	max-width: 30vw;
-	gap: 1vh;
+/* =========================================
+   ANIMATIONS
+========================================= */
 
-	pre {
-		margin: 0;
-		font-weight: 700;
-		font-size: 0.8em;
-		color: #94a3b8;
+@keyframes down {
+	0%,
+	40%,
+	100% {
+		transform: translateY(0);
 	}
 
-	& > div {
-		display: flex;
-		flex-direction: column;
-		gap: 1vh;
-
-		div {
-			h3 {
-				margin: 0;
-				transition-duration: 200ms;
-				color: #64748b;
-			}
-
-			h5 {
-				margin: 0;
-				color: #64748b;
-				font-weight: 700;
-			}
-		}
-
-		section {
-			color: #94a3b8;
-		}
-
-		article {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 0.5vmax;
-			div {
-				font-size: 0.8em;
-				font-weight: bold;
-				background-color: rgba(94, 234, 212, 0.2);
-				padding: 0.6vmin 0.5vmax;
-				border-radius: 200vw;
-				color: #60a5fa;
-			}
-		}
+	20% {
+		transform: translateY(12px);
 	}
-
-	box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(0);
-	border: 1px solid rgba($color: #000000, $alpha: 0);
-	transition-duration: 200ms;
 }
 
-.ExBox:hover {
-	& > div {
-		div {
-			h3 {
-				color: #60a5fa;
-			}
-		}
+@keyframes smoothTitleBg {
+	from {
+		background-position:
+			50% 50%,
+			50% 50%;
 	}
-	border: 1px solid rgba($color: #979797, $alpha: 0.2);
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-	backdrop-filter: blur(100px);
+
+	to {
+		background-position:
+			350% 50%,
+			350% 50%;
+	}
 }
+
+@keyframes smoothMainBg {
+	0%,
+	100% {
+		background-size: 100% 100%;
+	}
+
+	50% {
+		background-size: 120% 120%;
+	}
+}
+
+/* =========================================
+   APP
+========================================= */
 
 .App {
 	display: flex;
@@ -136,35 +90,47 @@ a {
 	width: 100%;
 }
 
+/* =========================================
+   TITLE
+========================================= */
+
 .Title {
+	position: relative;
 	width: 100%;
 	height: 100vh;
+	overflow: hidden;
+
 	& > .TitleContent {
+		position: relative;
+		z-index: 2;
+
 		width: 100%;
 		height: 100%;
-		min-height: 100vh;
-		min-width: 100vw;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
 		text-align: center;
+
 		mix-blend-mode: difference;
 		filter: invert(1);
 
 		& > h1 {
 			font-size: calc(1rem + 5vw);
 			position: relative;
+			font-weight: 800;
+			letter-spacing: -0.04em;
 		}
 	}
+
 	& > .Stripes {
+		position: absolute;
+		inset: 0;
+
 		width: 100%;
 		height: 100%;
-		min-height: 100vh;
-		min-width: 100vw;
-		display: flex;
-		place-content: center;
-		place-items: center;
-		position: absolute;
+
 		--stripes: repeating-linear-gradient(
 			100deg,
 			var(--maincolor) 0%,
@@ -174,118 +140,424 @@ a {
 			var(--maincolor) 16%
 		);
 
-		--rainbow: repeating-linear-gradient(100deg, #60a5fa 10%, #e879f9 15%, #60a5fa 20%, #5eead4 25%, #60a5fa 30%);
+		--rainbow: repeating-linear-gradient(
+			100deg,
+			var(--blue) 10%,
+			var(--pink) 15%,
+			var(--blue) 20%,
+			var(--cyan) 25%,
+			var(--blue) 30%
+		);
+
 		background-image: var(--stripes), var(--rainbow);
 		background-size: 300%, 200%;
-		background-position: 50% 50%, 50% 50%;
+		background-position:
+			50% 50%,
+			50% 50%;
 
 		filter: blur(10px) invert(100%);
 
 		mask-image: radial-gradient(ellipse at 100% -50%, white 50%, transparent 70%);
+
 		&::after {
 			content: '';
+
 			position: absolute;
 			inset: 0;
+
 			background-image: var(--stripes), var(--rainbow);
 			background-size: 200%, 100%;
+			background-position: 50% 50%;
+
 			animation: smoothTitleBg 60s linear infinite;
-			background-attachment: fixed;
+
 			mix-blend-mode: difference;
 		}
 	}
 }
 
+/* =========================================
+   SCROLL BUTTON
+========================================= */
+
 .ScrollDown {
-	height: 3vmax;
+	position: relative;
+	z-index: 100;
+
 	width: 3vmax;
-	padding: 5vmin 5vmax 2vmin 5vmax;
+	height: 3vmax;
+
 	cursor: pointer;
-	margin-top: -15vh;
+
+	margin-top: calc(-15vh + 5vmin);
 	animation: down 1500ms infinite;
+
 	& > div {
-		position: absolute;
-		width: 3vmax;
-		height: 3vmax;
+		width: 100%;
+		height: 100%;
+
 		border: 0.15vmax solid #000;
 		border-radius: 50%;
+		box-sizing: border-box;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		&::before {
 			content: '';
-			position: absolute;
-			top: 0.77vmax;
-			left: 0.9vmax;
+
 			width: 1vmax;
 			height: 1vmax;
+
 			border-right: 0.15vmax solid #000;
 			border-bottom: 0.15vmax solid #000;
-			transform: rotate(45deg);
+
+			transform: translateY(-0.2vmax) rotate(45deg);
 		}
 	}
 }
 
-.Experiences {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 3vh;
-}
+/* =========================================
+   MAIN SECTIONS
+========================================= */
 
 .MainBox {
+	position: relative;
+
 	display: flex;
 	justify-content: space-between;
-	margin-top: 10vh;
-	width: 70vw;
-	padding: 15vw;
-	background: radial-gradient(circle at 80% 30%, rgba(232, 121, 249, 0.4), transparent 10%, transparent),
-		radial-gradient(circle at 30% 60%, rgba(94, 234, 212, 0.4), transparent 10%, transparent),
-		radial-gradient(circle at 70% 80%, rgba(96, 165, 250, 0.4), transparent 10%, transparent);
+	align-items: flex-start;
+
+	width: 100%;
+	max-width: 1400px;
+
+	min-height: 80vh;
+
+	padding: 12rem 8vw;
+
+	background:
+		radial-gradient(circle at 80% 30%, rgba(232, 121, 249, 0.35), transparent 12%),
+		radial-gradient(circle at 30% 60%, rgba(94, 234, 212, 0.35), transparent 12%),
+		radial-gradient(circle at 70% 80%, rgba(96, 165, 250, 0.35), transparent 12%);
 
 	background-position: center;
-	animation: smoothMainBg 5s ease-in-out infinite;
+	animation: smoothMainBg 8s ease-in-out infinite;
 }
 
 .MainBox2 {
 	margin-top: 0;
-	background: radial-gradient(circle at 30% 20%, rgba(232, 121, 249, 0.4), transparent 10%, transparent),
-		radial-gradient(circle at 70% 60%, rgba(96, 165, 250, 0.4), transparent 10%, transparent),
-		radial-gradient(circle at 40% 80%, rgba(94, 234, 212, 0.4), transparent 10%, transparent);
+
+	background:
+		radial-gradient(circle at 30% 20%, rgba(232, 121, 249, 0.35), transparent 12%),
+		radial-gradient(circle at 70% 60%, rgba(96, 165, 250, 0.35), transparent 12%),
+		radial-gradient(circle at 40% 80%, rgba(94, 234, 212, 0.35), transparent 12%);
+
 	background-position: center;
 }
 
+/* =========================================
+   EXPERIENCE LIST
+========================================= */
+
+.Experiences {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+
+	width: 48%;
+
+	gap: 1.5rem;
+}
+
+/* =========================================
+   EXPERIENCE CARD
+========================================= */
+
+.ExBox {
+	position: relative;
+
+	color: var(--text);
+
+	padding: 1.5rem;
+
+	border-radius: 1rem;
+
+	display: flex;
+	flex-direction: column;
+
+	max-width: 100%;
+
+	gap: 0.8rem;
+
+	border: 1px solid rgba(71, 85, 105, 0.06);
+
+	background: rgba(255, 255, 255, 0.12);
+
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+	backdrop-filter: blur(0);
+
+	transition:
+		transform 250ms ease,
+		border-color 250ms ease,
+		box-shadow 250ms ease,
+		background-color 250ms ease;
+
+	pre {
+		margin: 0;
+
+		font-family: 'Inter', sans-serif;
+
+		font-weight: 700;
+		font-size: 0.75rem;
+
+		letter-spacing: 0.03em;
+
+		color: var(--text-light);
+	}
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+
+		gap: 0.75rem;
+
+		div {
+			h3 {
+				margin: 0;
+
+				color: var(--text);
+
+				font-size: 1.1rem;
+				line-height: 1.3;
+
+				transition: color 200ms ease;
+			}
+
+			h5 {
+				margin: 0;
+
+				color: var(--text-light);
+
+				font-weight: 700;
+				font-size: 0.8rem;
+
+				letter-spacing: 0.02em;
+			}
+		}
+
+		section {
+			color: var(--text-light);
+
+			font-size: 0.9rem;
+			line-height: 1.65;
+		}
+
+		article {
+			display: flex;
+			flex-wrap: wrap;
+
+			gap: 0.4rem;
+
+			div {
+				font-size: 0.7rem;
+				font-weight: 700;
+
+				background-color: rgba(96, 165, 250, 0.1);
+
+				padding: 0.35rem 0.65rem;
+
+				border-radius: 999px;
+
+				color: #3b82f6;
+
+				border: 1px solid rgba(96, 165, 250, 0.08);
+			}
+		}
+	}
+}
+
+.ExBox:hover {
+	transform: translateY(-3px);
+
+	border-color: rgba(96, 165, 250, 0.25);
+
+	background: rgba(255, 255, 255, 0.35);
+
+	box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+
+	backdrop-filter: blur(18px);
+
+	& > div {
+		div {
+			h3 {
+				color: #3b82f6;
+			}
+		}
+	}
+}
+
+/* =========================================
+   WHO AM I
+========================================= */
+
 .WhoAmI {
 	position: sticky;
-	top: 35%;
+	top: 30%;
+
 	height: max-content;
+
 	width: 40%;
 
+	padding-right: 4rem;
+
 	h1 {
+		margin-top: 0;
+		margin-bottom: 1.5rem;
+
 		text-align: center;
-		color: #64748b;
+
+		color: var(--text);
+
+		font-size: clamp(2rem, 3vw, 3rem);
+		letter-spacing: -0.04em;
 	}
 
 	p {
-		color: #94a3b8;
+		margin: 0;
+
+		color: var(--text-light);
+
+		font-size: 0.95rem;
+		line-height: 1.8;
 	}
 }
+
+/* =========================================
+   FOOTER
+========================================= */
 
 .Footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
 	height: 10vh;
 	width: 80%;
 	padding: 0 10%;
-	background-color: transparent;
-	backdrop-filter: blur(100px);
-	background: radial-gradient(circle at 40% 60%, rgba(232, 121, 249, 0.4), transparent 5%, transparent),
-		radial-gradient(circle at 80% 40%, rgba(94, 234, 212, 0.4), transparent 3%, transparent);
-	background-position: center;
+
 	color: #64748b;
+
 	& > div {
 		display: flex;
 		flex-direction: column;
+
 		& > a {
 			text-decoration: underline;
 		}
+	}
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+	.MainBox {
+		flex-direction: column;
+
+		padding: 8rem 7vw;
+
+		gap: 5rem;
+	}
+
+	.WhoAmI {
+		position: static;
+
+		width: 100%;
+
+		padding-right: 0;
+	}
+
+	.Experiences {
+		width: 100%;
+	}
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+	.Title {
+		height: 90vh;
+
+		& > .TitleContent {
+			& > h1 {
+				font-size: 17vw;
+			}
+		}
+	}
+
+	.ScrollDown {
+		margin-top: -10vh;
+
+		padding: 4rem;
+	}
+
+	.MainBox {
+		min-height: auto;
+
+		padding: 6rem 1.25rem;
+
+		gap: 4rem;
+	}
+
+	.WhoAmI {
+		h1 {
+			font-size: 2rem;
+		}
+
+		p {
+			font-size: 0.9rem;
+			line-height: 1.7;
+		}
+	}
+
+	.ExBox {
+		padding: 1.25rem;
+
+		& > div {
+			section {
+				font-size: 0.85rem;
+				line-height: 1.6;
+			}
+		}
+	}
+
+	.Footer {
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 1.5rem;
+
+		padding: 2rem 1.25rem;
+	}
+}
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
 	}
 }
